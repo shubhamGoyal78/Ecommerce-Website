@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import "./NavBar.css";
 import logo from "../images/logo_nav.png"; // Adjust the path as necessary
 import logo_profile from "../images/user_nav.png"; // Adjust the path as necessary
 import logo_wishlist from "../images/love.png"; // Adjust the path as necessary
 import logo_bag from "../images/bag_icon_nav.png"; // Adjust the path as necessary
 import icon_search from "../images/search_nav.png";
+
 function NavBar() {
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+       // Animate the navbar into view
+       gsap.to(navbarRef.current, {
+        duration: 1,
+        y: 0, // Animate to y: 0
+        opacity: 1, // Animate to full opacity
+        ease: 'power3.out'
+      });
+    }, []);
+
   return (
-    <nav className="navbar">
+    <nav ref={navbarRef} className="navbar" style={{ transform: 'translateY(-100px)', opacity: 0 }}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <img src={logo} alt="Logo" />
         </div>
         <div className="navbar-links">
-        <a href="/men" class="nav-link-men">Mens</a>
-            
+          <a href="/men" className="nav-link-men">Mens</a>
           <a href="/women" className="nav-link-women">
             Womens
           </a>

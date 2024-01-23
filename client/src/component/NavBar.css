@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .navbar {
@@ -12,7 +13,6 @@ body {
     width: 100%;
     height: 80px;
     background-color: transparent;
-    padding: 0 80px;
     overflow-x: hidden; /* Hide horizontal overflow */
 }
 
@@ -40,7 +40,7 @@ body {
     display: flex;
     gap: 15px;
     justify-content: flex-start;
-    padding-left: 30px;
+    padding-left: 71px;
     align-items: center; /* Align items vertically */
 }
 
@@ -59,7 +59,7 @@ body {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    padding-left: 71px;
+    padding-left: 167px;
 
     align-items: center;
 }
@@ -88,7 +88,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
-    padding-left: 60px;
+    padding-left: 79px;
 }
 
 .icon-item {
@@ -105,4 +105,29 @@ body {
     width: 24px;
     margin-bottom: 5px;
 }
+/* General hover style for all navbar links */
+.navbar-links a:hover {
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+}
 
+/* Specific hover styles for each link */
+.navbar-links .nav-link-men:hover {
+    border-bottom-color: #FF0000; /* Red border for Men */
+}
+
+.navbar-links .nav-link-women:hover {
+    border-bottom-color: #00FF00; /* Green border for Women */
+}
+
+.navbar-links .nav-link-kids:hover {
+    border-bottom-color: #0000FF; /* Blue border for Kids */
+}
+
+.navbar-links .nav-link-home-living:hover {
+    border-bottom-color: #FF00FF; /* Magenta border for Home & Living */
+}
+
+.navbar-links .nav-link-beauty:hover {
+    border-bottom-color: #FFFF00; /* Yellow border for Beauty */
+}
